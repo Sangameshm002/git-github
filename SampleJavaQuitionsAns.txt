@@ -1,0 +1,118 @@
+1. Consider the following statements:
+
+I. A class can be declared as both abstract and final.
+II. A class declared as final can be extended by defining a sub-class.
+III. Resolving calls to methods dynamically at run-time is called late binding.
+IV. The class Object defined by Java need not be a super class of all other classes.
+
+Identify the correct statement from the following:
+
+(a) Both (I) and (II)  (b) Both (III) and (IV) 
+(c) Both (I) and (III)  (d) Both (II) and (IV) 
+(e) Only (III) .
+
+A) e
+
+
+--------------------------------------
+
+2. 
+public class Test {
+
+    public static void main (String args [ ])
+    {
+        int result, x ;
+        x = 3 ;
+        result = 0;
+        while (x <= 10) {
+            if (x%2 == 0) result += x ;
+            x++ ;
+        }
+        System.out.println(result) ;
+    }
+}
+
+Which of the following will be the output of the above program?
+
+(a) 55 (b) 30 (c) 25 (d) 28 (e) 45.
+
+A) d
+
+----------------------------------------
+
+3.
+
+class A{
+
+    A calculate(){
+        System.out.println("calculating A");
+        return new A();
+    }
+}
+
+class B extends A{
+
+    B calculate() {
+        System.out.println("calculating B");
+        return new B();
+    }
+}
+
+public class Test2 {
+    public static void main(String args[]){
+        A  a=new B();
+        a.calculate();
+    }
+}
+
+a) calculating B
+b) calculating A
+c) Runtime Error
+d) Compilation Error
+
+A) b
+
+
+----------------------
+
+4.
+
+class Hello
+{
+    int i;
+    public void display()
+    {
+        System.out.println(i);
+    }
+}
+class Hi extends Hello
+{
+    int j;
+    private void display()
+    {
+        System.out.println(j);
+    }
+}
+
+
+public class DynamicDispatch {
+
+    public static void main(String args[]){
+
+        Hi obj2 = new Hi();
+        obj2.i = 1;
+        obj2.j = 2;
+        Hello r;
+        r = obj2;
+        r.display();
+    }
+}
+
+
+
+a) 1
+b) 2
+c) Runtime Error
+d) Compilation Error
+
+A) d
